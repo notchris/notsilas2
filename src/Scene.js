@@ -101,6 +101,14 @@ export default class MainScene extends Phaser.Scene {
             this.player.body.setAllowGravity(false);
             this.physics.moveToObject(this.player, { x: this.lastHook.x - this.player.width / 2, y: this.lastHook.y - this.player.width / 2 }, 400);
             const distance = Phaser.Math.Distance.Between(this.player.x, this.player.y, this.lastHook.x - this.player.width / 2, this.lastHook.y - this.player.width / 2);
+
+            this.hook.setTo(
+                this.player.x + this.player.width / 2,
+                this.player.y + this.player.width / 2,
+                this.lastHook.x - this.player.width / 2,
+                this.lastHook.y - this.player.width / 2,
+            );
+
             if (distance < 20) {
                 this.hookActive = false;
                 this.hook.destroy();
