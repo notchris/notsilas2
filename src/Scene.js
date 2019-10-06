@@ -105,8 +105,8 @@ export default class MainScene extends Phaser.Scene {
             this.hook.setTo(
                 this.player.x + this.player.width / 2,
                 this.player.y + this.player.width / 2,
-                this.lastHook.x - this.player.width / 2,
-                this.lastHook.y - this.player.width / 2,
+                this.lastHook.x,
+                this.lastHook.y,
             );
 
             if (distance < 20) {
